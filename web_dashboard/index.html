@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IVI 老虎機 PM 與開發商儀表板</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="side-nav">
+    <div class="brand">
+      <span class="brand-mark">IVI</span>
+      <div>
+        <strong>數據分析與遊戲選擇</strong>
+      </div>
+    </div>
+    <nav>
+      <a href="#overview" class="active">總覽</a>
+      <a href="#providers">供應商</a>
+      <a href="#games">熱門遊戲</a>
+      <a href="#signals">訊號觀察</a>
+      <a href="#discussion">討論重點</a>
+      <a href="#dev-picks">開發候選</a>
+      <a href="#benchmark">外部參考</a>
+    </nav>
+  </aside>
+
+  <main class="page-shell">
+    <section id="overview" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">2026-03 to 2026-05</p>
+          <h1>IVI 老虎機數據 x 線上排名依據</h1>
+        </div>
+        <div class="period-chip">三個月營運視角</div>
+      </div>
+      <div id="kpiGrid" class="kpi-grid"></div>
+      <div class="grid two">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>月度投注 / GGR 趨勢</h2>
+            <span>萬</span>
+          </div>
+          <div id="monthlyLine" class="chart"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>主要供應商投注占比</h2>
+            <span>前 8 名</span>
+          </div>
+          <div id="providerBars" class="chart"></div>
+        </div>
+      </div>
+      <div class="insight-strip">
+        <article><strong>核心流量池</strong><span>PG Soft, Pragmatic, AsiaGaming/IVI 前三大合計接近九成投注。</span></article>
+        <article><strong>成功模式</strong><span>Mahjong 系列是亞洲題材、長時遊玩與 Free Spin 回饋的核心樣本。</span></article>
+        <article><strong>資料缺口</strong><span>下一步要補 exposure、campaign、mechanic、region，才可判斷真實產品力。</span></article>
+      </div>
+    </section>
+
+    <section id="providers" class="section">
+      <div class="section-heading compact">
+        <h2>供應商表現</h2>
+        <p>供應商投注、GGR、RTP 與 04→05 月變化。</p>
+      </div>
+      <div class="table-wrap"><table id="providerTable"></table></div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="section-heading compact">
+        <h2>熱門遊戲組合</h2>
+        <div class="controls">
+          <label>供應商 <select id="providerFilter"></select></label>
+          <label>指標 <select id="gameMetric">
+            <option value="total_bet_wan">總投注</option>
+            <option value="ggr_wan">GGR</option>
+            <option value="spins_per_player">每人 Spin</option>
+            <option value="hits_100x_per_m_spins">每百萬 Spin 100x+</option>
+          </select></label>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="panel">
+          <div class="panel-head"><h2>篩選後熱門遊戲</h2><span id="gameCount"></span></div>
+          <div id="gameBars" class="chart tall"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>遊戲明細表</h2><span>前 20 名</span></div>
+          <div class="table-wrap compact-table"><table id="gameTable"></table></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="signals" class="section">
+      <div class="section-heading compact">
+        <h2>訊號觀察</h2>
+        <p>成長、衰退、波動與黏著訊號，協助拆解產品與營運原因。</p>
+      </div>
+      <div class="signal-tabs">
+        <button data-signal="growth" class="selected">成長</button>
+        <button data-signal="decline">衰退</button>
+        <button data-signal="volatility">波動</button>
+        <button data-signal="engagement">黏著</button>
+      </div>
+      <div class="table-wrap"><table id="signalTable"></table></div>
+    </section>
+
+    <section id="discussion" class="section">
+      <div class="section-heading compact">
+        <h2>討論重點</h2>
+        <p>把報告中需要進一步探討的內容整理成 PM、開發商、營運與 BI 可以直接開會使用的議題。</p>
+      </div>
+      <div class="discussion-grid" id="discussionCards"></div>
+    </section>
+
+    <section id="dev-picks" class="section">
+      <div class="section-heading compact">
+        <h2>Top 20 開發候選方向</h2>
+        <p>交叉 IVI 內部數據與線上參考趨勢後，整理目前最值得仿研、拆解或開發延伸玩法的 20 款遊戲方向。</p>
+      </div>
+      <div class="dev-note">
+        <strong>評分邏輯</strong>
+        <span>內部權重：投注、GGR、玩家、每人 Spin、RTP、100x/50x、大獎倍率、Free Spin。外部權重：Bigwinboard / Casino Guru / SlotCatalog 趨勢、Demo/Review 可參考性、SEA operator lobby 可落地性。</span>
+      </div>
+      <div class="table-wrap"><table id="devPicksTable"></table></div>
+    </section>
+
+    <section id="benchmark" class="section">
+      <div class="section-heading compact">
+        <h2>線上參考矩陣</h2>
+        <p>外部網站不是取代內部數據，而是補足玩法、RTP、volatility、operator lobby 與市場語言。</p>
+      </div>
+      <div class="matrix" id="benchmarkCards"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
