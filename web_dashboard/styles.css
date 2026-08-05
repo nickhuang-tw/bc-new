@@ -144,6 +144,9 @@ nav a.active {
 .insight-strip span { color: var(--muted); font-size: 14px; line-height: 1.45; }
 .insight-strip article:nth-child(2) { border-left-color: var(--blue); }
 .insight-strip article:nth-child(3) { border-left-color: var(--green); }
+.july-overview article { border-left-color: var(--purple); }
+.july-overview article:nth-child(2) { border-left-color: var(--green); }
+.july-overview article:nth-child(3) { border-left-color: var(--red); }
 
 .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 .controls label { color: var(--muted); font-size: 13px; }
@@ -177,6 +180,90 @@ select {
   line-height: 1.45;
   font-size: 14px;
 }
+.bet-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.bet-summary-card,
+.tier-card,
+.principle-item {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 10px;
+}
+.bet-summary-card {
+  padding: 16px 18px;
+  border-top: 2px solid var(--amber);
+}
+.bet-summary-card:nth-child(2) { border-top-color: var(--blue); }
+.bet-summary-card:nth-child(3) { border-top-color: var(--green); }
+.bet-summary-card:nth-child(4) { border-top-color: var(--purple); }
+.bet-summary-card span,
+.tier-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.bet-summary-card strong {
+  display: block;
+  margin-top: 6px;
+  color: #fed7aa;
+  font-size: 20px;
+}
+.bet-summary-card p,
+.tier-card p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.tier-grid {
+  display: grid;
+  gap: 10px;
+}
+.tier-card {
+  padding: 13px 15px;
+  border-left: 3px solid var(--blue);
+}
+.tier-card:nth-child(2) { border-left-color: var(--green); }
+.tier-card:nth-child(3) { border-left-color: var(--amber); }
+.tier-card:nth-child(4) { border-left-color: var(--purple); }
+.tier-card:nth-child(5) { border-left-color: var(--red); }
+.tier-card strong {
+  display: block;
+  margin-top: 3px;
+  color: #dbeafe;
+  font-size: 17px;
+}
+.principle-list {
+  display: grid;
+  gap: 10px;
+}
+.principle-item {
+  padding: 12px 14px;
+  color: var(--ink);
+  background: rgba(59,130,246,.07);
+  border-left: 3px solid rgba(245,158,11,.75);
+  line-height: 1.48;
+}
+#currencyBetTable { min-width: 1320px; }
+#currencyBetTable td:nth-child(1) strong { color: #fed7aa; }
+#currencyBetTable td:nth-child(2),
+#currencyBetTable td:nth-child(5) {
+  color: #93c5fd;
+  font-weight: 700;
+}
+#currencyBetTable td:nth-child(7) {
+  color: #cbe8df;
+  min-width: 260px;
+}
+#currencyBetTable td:nth-child(9) {
+  min-width: 280px;
+}
 table { width: 100%; border-collapse: collapse; min-width: 900px; }
 th {
   background: var(--surface2); color: var(--muted); text-align: left; font-size: 11px;
@@ -194,9 +281,11 @@ td:nth-child(1), td:nth-child(2) { color: #d8e7f2; }
 #devPicksTable th:nth-child(2), #devPicksTable td:nth-child(2) { width: 230px; }
 #devPicksTable th:nth-child(3), #devPicksTable td:nth-child(3) { width: 190px; color: #b7d7f0; }
 #devPicksTable th:nth-child(4), #devPicksTable td:nth-child(4) { width: 260px; color: #cbe8df; }
-#devPicksTable th:nth-child(5), #devPicksTable td:nth-child(5) { width: 250px; color: #d8c99c; }
+#devPicksTable th:nth-child(5), #devPicksTable td:nth-child(5) { width: 240px; color: #93c5fd; }
+#devPicksTable th:nth-child(6), #devPicksTable td:nth-child(6) { width: 250px; color: #d8c99c; }
 #devPicksTable td:nth-child(2) strong { display: block; color: #edf6ff; margin-bottom: 3px; }
 #devPicksTable td:nth-child(2) span { display: block; color: var(--muted); font-size: 12px; }
+.muted-note { color: var(--text-muted); font-size: 12px; }
 .compact-table { max-height: 515px; }
 .delta-up {
   color: #a7f3b9;
@@ -378,7 +467,7 @@ svg { width: 100%; height: 100%; display: block; }
   .side-nav { position: static; width: auto; }
   .page-shell { margin-left: 0; padding: 18px; }
   nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .kpi-grid, .grid.two, .insight-strip, .matrix, .discussion-grid { grid-template-columns: 1fr; }
+  .kpi-grid, .grid.two, .insight-strip, .matrix, .discussion-grid, .bet-summary { grid-template-columns: 1fr; }
   .discussion-card:first-child { grid-column: auto; }
   .trend-row { grid-template-columns: 1fr; }
 }

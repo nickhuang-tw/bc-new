@@ -16,11 +16,13 @@
     </div>
     <nav>
       <a href="#overview" class="active">總覽</a>
+      <a href="#july">七月更新</a>
       <a href="#providers">供應商</a>
       <a href="#games">熱門遊戲</a>
       <a href="#signals">訊號觀察</a>
       <a href="#discussion">討論重點</a>
       <a href="#dev-picks">開發候選</a>
+      <a href="#bet-strategy">BET 設定</a>
       <a href="#benchmark">外部參考</a>
     </nav>
   </aside>
@@ -29,10 +31,10 @@
     <section id="overview" class="section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">2026-03 to 2026-05</p>
+          <p class="eyebrow">2026-03 to 2026-05 + 2026-07 update</p>
           <h1>IVI 老虎機數據 x 線上排名依據</h1>
         </div>
-        <div class="period-chip">三個月營運視角</div>
+        <div class="period-chip">Mar-May 基準 + July 單月更新</div>
       </div>
       <div id="kpiGrid" class="kpi-grid"></div>
       <div class="grid two">
@@ -56,6 +58,40 @@
         <article><strong>成功模式</strong><span>Mahjong 系列是亞洲題材、長時遊玩與 Free Spin 回饋的核心樣本。</span></article>
         <article><strong>資料缺口</strong><span>下一步要補 exposure、campaign、mechanic、region，才可判斷真實產品力。</span></article>
       </div>
+      <div class="insight-strip july-overview">
+        <article><strong>七月 Slot 延伸</strong><span>7月 Slot 投注 639,413萬、GGR 22,552萬，PG / PPG / AGIN 仍是主要內容池。</span></article>
+        <article><strong>七月捕魚品類</strong><span>捕魚投注 185,368萬、GGR 5,645萬，占 Slot+捕魚整體投注約 22.5%，應獨立追蹤。</span></article>
+        <article><strong>七月風險觀察</strong><span>RTP 異常需回查單月大獎、活動補貼、玩家集中度與曝光，不宜直接視為產品衰退。</span></article>
+      </div>
+    </section>
+
+    <section id="july" class="section">
+      <div class="section-heading compact">
+        <h2>七月資料更新</h2>
+        <p>整合 2026-07 Slot 系列與捕魚系列，保留單月口徑，方便和原三個月資料分開判讀。</p>
+      </div>
+      <div id="julyKpiGrid" class="kpi-grid"></div>
+      <div class="grid two">
+        <div class="panel">
+          <div class="panel-head"><h2>七月 Slot 供應商投注占比</h2><span>前 8 名</span></div>
+          <div id="julySlotProviderBars" class="chart"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>七月捕魚供應商投注占比</h2><span>前 8 名</span></div>
+          <div id="julyFishProviderBars" class="chart"></div>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="panel">
+          <div class="panel-head"><h2>七月 Slot 熱門遊戲</h2><span>投注前 12</span></div>
+          <div class="table-wrap compact-table"><table id="julySlotGameTable"></table></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>七月捕魚熱門遊戲</h2><span>投注前 12</span></div>
+          <div class="table-wrap compact-table"><table id="julyFishGameTable"></table></div>
+        </div>
+      </div>
+      <div class="table-wrap"><table id="julyRtpAlertTable"></table></div>
     </section>
 
     <section id="providers" class="section">
@@ -101,6 +137,7 @@
         <button data-signal="decline">衰退</button>
         <button data-signal="volatility">波動</button>
         <button data-signal="engagement">黏著</button>
+        <button data-signal="july">七月</button>
       </div>
       <div class="table-wrap"><table id="signalTable"></table></div>
     </section>
@@ -125,10 +162,29 @@
       <div class="table-wrap"><table id="devPicksTable"></table></div>
     </section>
 
+    <section id="bet-strategy" class="section">
+      <div class="section-heading compact">
+        <h2>東南亞 BET 金額與幣種策略</h2>
+        <p>整理 operator 常見投注面額、預設值與幣種顯示方式，作為 PM、數值設計與前端投注列設定參考。</p>
+      </div>
+      <div class="bet-summary" id="betSummaryCards"></div>
+      <div class="grid two">
+        <div class="panel">
+          <div class="panel-head"><h2>USD 等值投注層級</h2><span>BET tier</span></div>
+          <div id="betTierCards" class="tier-grid"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>製作人設定原則</h2><span>PM notes</span></div>
+          <div id="betPrinciples" class="principle-list"></div>
+        </div>
+      </div>
+      <div class="table-wrap"><table id="currencyBetTable"></table></div>
+    </section>
+
     <section id="benchmark" class="section">
       <div class="section-heading compact">
         <h2>線上參考矩陣</h2>
-        <p>外部網站不是取代內部數據，而是補足玩法、RTP、volatility、operator lobby 與市場語言。</p>
+        <p>2026-08-05 重新對比 Bigwinboard、Casino Guru、SlotCatalog、M88、PH local RNG 內容；外部資料用於補足玩法、RTP、volatility、operator lobby 與市場語言。</p>
       </div>
       <div class="matrix" id="benchmarkCards"></div>
     </section>
